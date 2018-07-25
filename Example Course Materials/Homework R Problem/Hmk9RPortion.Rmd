@@ -1,0 +1,27 @@
+---
+title: "Homework 9 - R Problem - 8.16b Simulation"
+author: "Your NAME"
+output: pdf_document
+---
+
+Read over 8.16, and the setting in part b. In order to verify your computation for 8.16b, we can perform a simulation in R. 
+
+a. What do you need to do to simulate payouts for the company? (Hint: Words or pseudocode).
+
+> ANSWER
+
+
+
+b. Perform a reproducible simulation and report the expected payout by the insurance company based on 10000 simulated claims.
+
+> ANSWER
+
+```{r}
+
+```
+
+
+c. How does the value you obtained from the simulation compare to your answer in 8.16b? How much variation do you see in the expected payout based on running your simulation several times? (Hint: this means running your code above several times with different seeds.)
+
+> ANSWER
+

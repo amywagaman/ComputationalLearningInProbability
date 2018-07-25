@@ -1,0 +1,85 @@
+---
+title: "Poisson Examples"
+author: "A.S. Wagaman"
+output: pdf_document
+---
+
+### Warm-up Problem
+
+A parking lot has two entrances. Cars arrive at entrance I according to a Poisson distribution at an average of three per hour and at entrance II according to Poisson distribution at an average of four per hour. What is the probability that a total of three cars will arrive at the parking lot in a given hour, assuming that the numbers of cars arriving at the two entrances are independent?
+
+
+### Working with Binomial Distributions - Any Questions?
+
+Let's learn how to work with binomial distributions in R.
+
+First, we want to be able to visualize the distribution. This is achieved by plotting what is called the probability mass function for possible values of the random variable - the probability of attaining each value of the random variable. 
+
+```{r}
+n=10 #set the number of trials
+p=.5 #set the probability of success, P(X_i=1)=p for the underlying Bernoulli X_i's
+barplot(dbinom(0:n,n,p),names.arg=0:n,main="Binomial Distribution with n=10 and p=.5") #one way to make this plot
+```
+
+The following three commands are described in your book on page 91:
+
+```{r}
+k=3
+dbinom(k,n,p) #computes P(X=k) when X is Bin(n,p)
+pbinom(k,n,p) #computes P(X<=k) when X is Bin(n,p) - cumulative probability
+rbinom(k,n,p) #generates k observations from a Bin(n,p) distribution
+```
+
+### Notes from the Text on 3.6, 3.7, and 3.8
+
+### Working with Poisson Random Variables in R
+
+For this set of subquestions, let $X$ be a Poisson(20) random variable.
+
+1) Which values of X would you expect to have the highest probability?
+
+2) Does the following picture showing part of the associated probability distribution agree with your thinking for 1)? Why is it only showing part of the distribution? Which part? What do you know about the "missing" part?
+
+```{r}
+barplot(dpois(0:50,20),names.arg=0:50,main="Poisson Distribution with lambda=20") 
+```
+
+3) Use R to find P(X>16).
+
+```{r}
+
+```
+
+
+4) Find P(12<=X<=22).
+
+```{r}
+
+```
+
+5) Randomly generate 1000 values from a Poisson(32) distribution and compute their mean to see if 32 events really do occur, on average. You may want to save the values in a vector. 
+
+```{r}
+
+```
+
+
+### Working with Poisson RVs
+
+When working through these (and your homework) problems, try to practice identifying the appropriate distribution (Binomial vs. Poisson for now, mainly). As we continue to add more distributions to those you know, being able to distinguish these will be helpful.
+
+1) Customers arrive at a checkout counter in a department store according to a Poisson distribution at an average of 7 per hour. During a given hour, what are the probabilities that:
+
+a) no more than three customers arrive?
+b) at least two customers arrive?
+c) exactly five customers arrive?
+
+2) If it takes approximately 10 minutes to serve each customer in 1), is it likely that the total service time for all customers who arrive within a given hour will exceed 2.5 hours? Note: watch your minutes vs. hours.
+
+3) A salesperson has found that the probability of a sale on a single contact is approximately 0.03. If the salesperson contacts 100 prospects, what is the probability of making at least one sale if:
+a) the probability is found exactly (specify the distribution (that includes parameters) and find the probability)
+b) the probability is found approximately (specify the distribution and find the probability)
+
+
+
+You can use any remaining time for your homework, especially working on the R function you need for the R problem (3.46).  

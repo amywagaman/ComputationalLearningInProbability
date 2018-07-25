@@ -1,0 +1,45 @@
+---
+title: "Homework 5 - R Problem - Modified Ch 5 Problem 6"
+author: "YOUR NAME"
+output: pdf_document
+---
+
+Read Problem 5.6.
+
+a. Solve 5.6. 
+
+> ANSWER
+
+b. Now suppose Tina only takes 10 courses in the math department. What is the expected number of different professors she will have? (As in part a, assume that every time Tina takes a course, each professor is equally likely to be the instructor). 
+
+> ANSWER
+
+```{r}
+
+```
+
+We want to simulate and verify the results in part b. Recall that there are usually many ways to accomplish a programming task in R, so you might approach this differently than your classmates. Also remember, you don't always need to write a function to accomplish a task. 
+
+Here are some potentially new R commands that may be of use to you. The *unique* command in R will return the unique elements in a vector, which can then be counted up with the *length* command. You can save results too. For example,
+
+```{r}
+unique(c(2,2,2,4,4,4,4,4,4,5)) # returns 2, 4, 5
+length(unique(c(2,2,2,4,4,4,4,4,4,5))) # returns 3
+x<-length(unique(c(2,2,2,4,4,4,4,4,4,5))) # returns x = 3
+```
+
+c. Provide pseudocode to outline a reproducible simulation to verify your results in part b. 
+
+> ANSWER
+
+d. Provide the R code for your reproducible simulation and run it.
+
+> ANSWER
+
+```{r}
+
+```
+
+e. Write a few sentences to compare the results of your simulation to your computations in part b. 
+
+> ANSWER

@@ -1,0 +1,71 @@
+---
+title: "Homework 1 - R Problem"
+author: "YOUR NAME"
+output: pdf_document
+---
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+require(mosaic)
+```
+
+Acknowledgements: ADD NAMES HERE IF ANYONE ASSISTED YOU.  
+
+A new board game uses a 12-sided die with faces showing the numbers 2, 4, 6, and 8. However, each number does not appear 3 times. Instead, 4 and 6 appear three times each, while 8 appears only once, and 2 appears on the remaining five faces of the die. With this specialized die, some consumers have complained that they cannot play the game if the die is lost. So, the game developer has released an app to help replace the die dependence. Their app includes the following function:
+
+```{r}
+gamedicesum<-function(k){  #starts function definition
+  rolls<-rep(0, k)
+  for(i in 1:k){  #starts "for" loop
+    rolls[i]<-sample(c(2, 4, 6, 8), 1, prob=c(5/12, 1/4, 1/4, 1/12))
+  } #ends for loop
+  total<-sum(rolls)
+  total  #this value will be output as a result of applying the function
+} #ends function definition
+```
+
+The app allows users to choose k to be between 1 and 5. Hence, users can run the function (if using R), with a command like:
+
+```{r}
+gamedicesum(4) #for the game, k will be between 1 and 5
+```
+
+a. What is/are the argument(s)/input(s) to this function?
+
+> ANSWER
+
+b. What does the *gamedicesum* function do? Describe what the function does in your own words. Recall that if you do not know what an R function does, you can get help by typing ?functionname at the console. For example, help about the sample function can be opened by typing ?sample at the console. 
+
+> ANSWER
+
+c. Write pseudocode that someone else could use to generate a similar function. Note that pseudocode clearly defines the steps in the function, and may reference commands useful in creating the function, but is not actual code. Usually, you would write pseudocode before writing a function, but here, we are learning to craft functions, and you are reverse engineering this one. (Your answer here may be similar to that of part b. Just try to break down the steps in the function explicitly.)
+
+> ANSWER
+
+d. Now that we have a working function for the game developer's app, suppose we want to study the distribution of sums of 4 rolls from this specialized die. The code provided below runs 10000 sets of 4 rolls and saves the sum each time. How likely does it appear to be to obtain a sum of 22 or higher in 4 rolls?
+
+> ANSWER
+
+```{r}
+set.seed(59) #feel free to change
+reps<-10000
+savedsums<- replicate(reps, gamedicesum(4))
+table(savedsums)
+```
+
+e. Create a new function called "fairdicesum" that simulates $k$ rolls of a standard fair six-sided die and reports their sum.
+
+> ANSWER
+
+```{r}
+
+```
+
+f. Now that we have a fair die function, how likely does it appear to be to obtain a sum of 22 or higher in 4 rolls of the fair die? Use a simulation similar to that in part d. to provide an empirical probability estimate. (10000 reps should be more than sufficient.) Be sure your solution is reproducible. 
+
+> ANSWER
+
+```{r}
+
+```
+
+
